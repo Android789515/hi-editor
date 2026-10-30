@@ -63,10 +63,13 @@ end
 function App:renderStatusLine(termWidth, termHeight)
   term.setCursorPos(1, termHeight)
 
-  local statusLineInc = self.mode .. ' ' .. self.nonBufferInput
-  local statusLineAgg = statusLineInc .. string.rep(' ', termWidth - string.len(statusLineInc))
+  local statusLineBeg = self.mode .. ' ' .. self.nonBufferInput
+  local statusLineEnd = self.lineEnding
+  local statusLineMid = string.rep(' ', termWidth - string.len(statusLineBeg) - string.len(statusLineEnd))
 
-  for char in statusLineAgg:gmatch('.') do
+  local statusLine = statusLineBeg .. statusLineMid .. statusLineEnd
+
+  for char in statusLine:gmatch('.') do
     renderStatusLineChar(char)
   end
 end
