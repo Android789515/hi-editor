@@ -15,7 +15,7 @@ local baseURL = 'https://raw.githubusercontent.com/Android789515/hi-editor/refs/
 print('Installing...')
 
 for _, file in ipairs(appFiles) do
-  local contents = os.run('wget', baseURL .. file)
+  local contents = shell.run('wget', baseURL .. file)
 
   local appFile = fs.open(installPath .. file, 'w')
 

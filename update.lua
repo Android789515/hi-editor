@@ -12,4 +12,4 @@ else
   print('Reinstalling...')
 end
 
-os.run('wget', install.baseURL .. 'install.lua')
+shell.run('wget', install.baseURL .. 'install.lua')
