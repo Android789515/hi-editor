@@ -18,8 +18,8 @@ function App:new(maybeFile)
 
   local state = {
     run = true,
-    buffer,
-    lineEnding,
+    buffer = buffer,
+    lineEnding = lineEnding,
     mode = Modes.Normal,
     nonBufferInput = '',
   }
