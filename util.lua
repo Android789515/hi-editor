@@ -1,4 +1,7 @@
 local function detectLineEnding(path)
+  if not path then
+    return nil
+  end
   -- Open the file in raw binary read mode
   local file = fs.open(path, 'rb')
   if not file then return nil, 'File not found' end
