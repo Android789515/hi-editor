@@ -6,7 +6,7 @@ local appFiles = {
   'main.lua',
 }
 
-local installPath = '/programs/hi-editor'
+local installPath = '/programs/hi-editor/'
 
 fs.makeDir(installPath)
 
@@ -15,7 +15,7 @@ local baseURL = 'https://raw.githubusercontent.com/Android789515/hi-editor/refs/
 print('Installing...')
 
 for fileNumber, file in ipairs(appFiles) do
-  local success = shell.run('wget', baseURL .. file)
+  local success = shell.run('wget', baseURL .. file, installPath .. file)
 
   if success then
     print(fileNumber .. ' of ' .. #appFiles .. ' downloaded...')
