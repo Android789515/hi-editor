@@ -46,6 +46,9 @@ function App:render()
   end
 end
 
+function App:renderBuffer()
+end
+
 local function renderStatusLineChar(char)
   local textColor, backgroundColor = '0', '9'
 
@@ -55,9 +58,6 @@ local function renderStatusLineChar(char)
   end
 
   term.blit(char, textColor, backgroundColor)
-end
-
-function App:renderBuffer()
 end
 
 function App:renderStatusLine(termWidth, termHeight)
