@@ -13,3 +13,5 @@ else
 end
 
 shell.run('wget', install.baseURL .. 'install.lua')
+
+shell.run('install')
