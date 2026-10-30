@@ -5,7 +5,7 @@ if fs.exists(install.installPath) then
 
   for _, file in ipairs(install.appFiles) do
     if file ~= 'update.lua' then
-      os.run('rm', file)
+      shell.run('rm', file)
     end
   end
 else
