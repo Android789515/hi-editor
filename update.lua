@@ -1,4 +1,4 @@
-local install = require('install')
+local install = require('/install')
 
 if fs.exists(install.installPath) then
   print('Updating...')
