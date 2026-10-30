@@ -14,14 +14,14 @@ local baseURL = 'https://raw.githubusercontent.com/Android789515/hi-editor/refs/
 
 print('Installing...')
 
-for _, file in ipairs(appFiles) do
-  local contents = shell.run('wget', baseURL .. file)
+for fileNumber, file in ipairs(appFiles) do
+  local success = shell.run('wget', baseURL .. file)
 
-  local appFile = fs.open(installPath .. file, 'w')
-
-  appFile.write(contents)
-
-  appFile.close()
+  if success then
+    print(fileNumber .. ' of ' .. #appFiles .. ' downloaded...')
+  else
+    print('Could not download file: ' .. file)
+  end
 end
 
 print('Done')
